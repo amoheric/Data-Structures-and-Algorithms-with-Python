@@ -1,3 +1,21 @@
+STACK_MAX_SIZE = 100  # Set a maximum size for the stack
+stack_size = 0        # Global variable to track current stack size
+
+import unittest
+
+class TestStackOverflow(unittest.TestCase):
+    def test_stack_overflow(self):
+        global stack_top, stack_size
+        stack_top = None
+        stack_size = 0
+
+        for i in range(STACK_MAX_SIZE):
+            stack_top = push(stack_top, f"Message {i + 1}")
+        
+        # Now push one more to trigger overflow
+        stack_top = push(stack_top, "Overflow Message")
+        self.assertEqual(stack_size, STACK_MAX_SIZE, "Stack size should not exceed maximum limit")
+
 class Node:
     def __init__(self, message):
         self.message = message
@@ -6,34 +24,53 @@ class Node:
 
 # Function to add a message to the stack
 def push(top, message):
+    global stack_size
+    if stack_size >= STACK_MAX_SIZE:
+        print("Stack Overflow: Cannot add more messages to the stack!")
+        return top
     new_node = Node(message)
     new_node.next = top
+    stack_size += 1    # Increment stack size
     return new_node
+
 
 
 # Function to remove a message from the stack
 def pop(top):
+    global stack_size
     if top is None:
         print("Stack is empty!")
         return None, None
     temp = top
     top = top.next
+    stack_size -= 1    # Decrement stack size
     return top, temp.message
 
 
+
 # Function to add a message to the queue
+QUEUE_MAX_SIZE = 100  # Set a maximum size for the queue
+queue_size = 0        # Global variable to track current queue size
+
 def enqueue(front, rear, message):
+    global queue_size
+    if queue_size >= QUEUE_MAX_SIZE:
+        print("Queue Overflow: Cannot add more messages to the queue!")
+        return front, rear
     new_node = Node(message)
     if rear is None:
         front = rear = new_node
-        return front, rear
-    rear.next = new_node
-    rear = new_node
+    else:
+        rear.next = new_node
+        rear = new_node
+    queue_size += 1    # Increment queue size
     return front, rear
+
 
 
 # Function to remove a message from the queue
 def dequeue(front, rear):
+    global queue_size
     if front is None:
         print("Queue is empty!")
         return None, None, None
@@ -41,7 +78,9 @@ def dequeue(front, rear):
     front = front.next
     if front is None:
         rear = None
+    queue_size -= 1    # Decrement queue size
     return front, rear, temp.message
+
 
 
 # Function to display messages from a stack or queue
