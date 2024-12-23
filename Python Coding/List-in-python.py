@@ -1,8 +1,7 @@
 # NAME: ERIC AMOH ADJEI
 # DATE: 01/14/2024
-# Project 1: Algorithms And Linked Lists
-#
-#
+# Project Name: Algorithms And Linked Lists
+
 
 # Define a Node class to represent individual items in the linked list
 class Node:
