@@ -1,6 +1,6 @@
 # NAME: ERIC AMOH ADJEI
 # DATE: 01/14/2024
-# Project 1: LIST 
+# Project 1: Algorithms And Linked Lists
 #
 #
 
