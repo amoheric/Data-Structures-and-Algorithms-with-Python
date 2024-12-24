@@ -71,35 +71,36 @@ if __name__ == "__main__":
     # Welcome message and introduction
     print("Welcome to the Website Manager App!")
     print("This app allows you to manage a list of websites.")
-    name = input("Please enter your name: ")
+    name = input("Please enter your name to continue: ")
     age = input("Please enter your age: ")
     print(f"Hi {name}, you are {age} years old.")
     print("Here are the available functions of the app:")
 
     linked_list = LinkedList()
-    # Add the list of websites
-    websites = [
-        “http://amoheric.com”,
-        “http://jw.org”,
-        “http://google.org”,
-        “http://microsoft.org”,
-        “http://bing.org”,
-        “https://medium.com/@datasciencenexus/algorithms-on-linked-lists-to-crack-any-interview-7ff20cd1eda3”,
-        “https://www.geeksforgeeks.org/linked-list-data-structure/”,
-        “https://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm”,
-        “https://teachics.org/data-structure-c-tutorial/linked-list-operations-with-algorithm/”,
-        “https://www.w3schools.in/data-structures/linked-list”,
-        “https://medium.com/@chloez0607/exploring-key-algorithms-for-operations-on-linked-lists-266e72b38516”,
-        “https://www.scholarhat.com/tutorial/datastructures/linkedlist-in-data-structures”,
-        “https://canva.com”,
-        “http://pinterest.com”,
-        “https://credstat.net”,
-        “https://www.educba.com/linked-list-algorithm/”,
-        “https://thelinuxcode.com/linked-lists-demystified-a-comprehensive-101/”,
-        “https://stackoverflow.com/questions/52588022/c-sharp-memory-allocation-linked-list-implementation”,
-        “http://123movies.com”,
-        “http://homedepot.com”,
-    ]
+    #list of websites
+
+    websites = "[
+        "http://amoheric.com",
+        "http://jw.org",
+        "http://google.org",
+        "http://microsoft.org",
+        "http://bing.org",
+        "https://medium.com/@datasciencenexus/algorithms-on-linked-lists-to-crack-any-interview-7ff20cd1eda3",
+        "https://www.geeksforgeeks.org/linked-list-data-structure/",
+        "https://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm",
+        "https://teachics.org/data-structure-c-tutorial/linked-list-operations-with-algorithm/",
+        "https://www.w3schools.in/data-structures/linked-list",
+        "https://medium.com/@chloez0607/exploring-key-algorithms-for-operations-on-linked-lists-266e72b38516",
+        "https://www.scholarhat.com/tutorial/datastructures/linkedlist-in-data-structures",
+        "https://canva.com",
+        "http://pinterest.com",
+        "https://credstat.net",
+        "https://www.educba.com/linked-list-algorithm/",
+        "https://thelinuxcode.com/linked-lists-demystified-a-comprehensive-101/",
+        "https://stackoverflow.com/questions/52588022/c-sharp-memory-allocation-linked-list-implementation",
+        "http://123movies.com",
+        "http://homedepot.com",
+    ]"
     for website in websites:
         linked_list.append(website)
 
@@ -134,8 +135,8 @@ if __name__ == "__main__":
             print("Exiting the program.")
             break
         else:
-            print("Invalid choice. Please try again.")
 
+            print("Invalid choice. Please try again.")
 
 # Menu interface
 def menu():
