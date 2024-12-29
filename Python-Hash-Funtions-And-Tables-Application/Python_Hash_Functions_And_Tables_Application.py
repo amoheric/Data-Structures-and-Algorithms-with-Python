@@ -33,7 +33,7 @@ def hash_function3(key, size):
     return hash_value % size
 
 
-# Function to generate a hash table and calculate distribution
+# Function to generate a hash table and calculate the distribution
 def generate_and_analyze_hash_table(hash_function, size):
     hash_table = [0] * size
     for _ in range(size):
